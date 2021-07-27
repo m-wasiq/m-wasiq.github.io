@@ -168,6 +168,17 @@ a {
   color: #4B6A8270;
 }
 
+.years_form {
+  height: 350px;
+}
+
+#rOptio, #year_range {
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
 #years {
   width: 150px;
   overflow: hidden;
@@ -226,5 +237,167 @@ a {
   font-size: 18px;
   color: #3D3D41;
   opacity: 1;
+}
+
+.controls {
+  --borderWidth: 1px;
+  --scale: 1;
+  position: relative;
+  margin: auto;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sliderbox {
+  --trackLength: calc(var(--controlHeight) - 10em);
+  --trackSize: 0.5em;
+  --thumbSize: 10px;
+  --thumbLength: calc(var(--trackLength) * 0.12);
+  --scaleLength: calc(var(--trackLength) - var(--thumbLength) - 0.125em);
+  --bpos: calc(var(--thumbLength) / 2);
+  --sections: 2;
+  --tickLength: calc(var(--scaleLength) / var(--sections));
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0px solid transparent;
+  position: relative;
+  padding: 0;
+}
+
+.labeltext {
+  display: block;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  -webkit-filter: drop-shadow(-1px 1px 1px #fff);
+          filter: drop-shadow(-1px 1px 1px #fff);
+  height: 3em;
+  margin: 0.5em 0;
+  overflow: hidden;
+}
+
+output {
+  display: none;
+}
+
+datalist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  left: calc(var(--thumbSize) + 10px);
+  height: calc(var(--scaleLength) + 1.55em);
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  -webkit-filter: drop-shadow(-1px 1px 1px #fff);
+          filter: drop-shadow(-1px 1px 1px #fff);
+}
+
+/* Range Slider: Based on Ana Tudors Slider#76 */
+input[type='range'] {
+  --tpos: calc((var(--thumbSize) + var(--trackSize)) / 2 + .25em);
+  content: "";
+  position: absolute;
+  top: 8.2em;
+  left: 4px;
+  margin: 0;
+  padding: 0;
+  width: var(--trackLength);
+  height: var(--thumbSize);
+  border: solid 0 transparent;
+  border-radius: .25em;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+  cursor: pointer;
+  font-size: inherit;
+  background: repeating-linear-gradient(90deg, #868686, #868686 1px, transparent 0, transparent var(--tickLength)) var(--bpos) var(--tpos)/calc( var(--scaleLength) + 2px) calc(var(--thumbSize) - var(--tpos)) no-repeat;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--trackLength);
+  height: var(--trackSize);
+  padding: 0.125em;
+  border: 0;
+}
+
+input[type='range']::-moz-range-track {
+  box-sizing: border-box;
+  width: var(--trackLength);
+  height: var(--trackSize);
+  padding: 0.125em;
+  border: 0;
+}
+
+input[type='range']::-ms-track {
+  border: none;
+  box-sizing: border-box;
+  padding: 0.125em;
+  width: var(--trackLength);
+  height: var(--trackSize);
+  color: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  margin-top: calc( (var(--trackSize) - var(--thumbSize) - .3125em) / 2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 0 transparent;
+  border-width: 1px .3125em;
+  width: var(--thumbLength);
+  height: var(--thumbSize);
+  border-radius: 0.5em;
+  background: #6371D1;
+  cursor: ns-resize;
+}
+
+input[type='range']::-moz-range-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  border: solid 0 transparent;
+  border-width: 1px .3125em;
+  width: var(--thumbLength);
+  height: var(--thumbSize);
+  border-radius: 0.5em;
+  background: #333;
+  cursor: ns-resize;
+}
+
+input[type='range']::-ms-thumb {
+  box-sizing: border-box;
+  border: solid 0 transparent;
+  border-width: 1px .3125em;
+  width: var(--thumbLength);
+  height: var(--thumbSize);
+  border-radius: 0.5em;
+  background: #333;
+  cursor: ew-resize;
+}
+
+input[type='range']::-ms-fill-lower,
+input[type='range']::-ms-tooltip {
+  display: none;
+}
+
+input[type='range']:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
