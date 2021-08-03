@@ -607,6 +607,7 @@ a, button {
       display: flex;
       align-items: center;
       justify-content: center;
+      white-space: nowrap;
 
       .arrow_icon {
         width: 0px;
@@ -709,6 +710,10 @@ a, button {
   @include media(custom, 540px) {
     width: 180px;
     height: 180px;
+  }
+  @include media(custom, 480px) {
+    width: 140px;
+    height: 140px;
   }
   @include media(custom, 414px) {
     width: 140px;

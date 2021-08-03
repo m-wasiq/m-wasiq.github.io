@@ -744,6 +744,7 @@ a, button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  white-space: nowrap;
 }
 
 .community_div p a .arrow_icon {
@@ -868,6 +869,13 @@ a, button {
   #g2 {
     width: 180px;
     height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #g2 {
+    width: 140px;
+    height: 140px;
   }
 }
 

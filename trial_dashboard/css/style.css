@@ -36,7 +36,7 @@ a {
   padding: 13px;
   width: 80px;
   height: 100vh;
-  min-height: 380px;
+  min-height: 410px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,10 +74,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 13px;
 }
 
 .side_navbar .navbar a {
+  margin-bottom: 13px;
   width: 54px;
   height: 54px;
   color: #FFF;
@@ -98,7 +98,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 6px;
 }
 
 .side_navbar .navbar a:hover {
@@ -110,6 +109,7 @@ a {
 }
 
 .side_navbar .navbar a span {
+  margin-top: 6px;
   display: block;
 }
 
@@ -132,7 +132,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 27px;
+  gap: 17px;
   margin-bottom: 20px;
 }
 
@@ -142,6 +142,7 @@ a {
   display: flex;
   -webkit-transform: scale(1);
           transform: scale(1);
+  margin-top: 10px;
 }
 
 .side_navbar .navbar_bottom a:hover {
