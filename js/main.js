@@ -31,8 +31,10 @@ $(function() {
       },
       options: {
         responsive: true,
+        // rotation: 3 * Math.PI,
+        // circumference: 3 * Math.PI,
         maintainAspectRatio: true,
-        cutoutPercentage: 70,
+        cutoutPercentage: 76,
         elements: {
           arc: {
             borderWidth: 0,
@@ -94,7 +96,7 @@ $(function() {
 
   });
 
-  
+  // Community home images
   $(document).ready(function() {     
     $('#sb_now_hover').hover(function(){
       $("#sb_now").attr("class", "hover community_div");

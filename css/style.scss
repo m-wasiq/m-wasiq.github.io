@@ -494,7 +494,7 @@ a, button {
   }
 }
 .community_wrpr {
-  max-width: 1420px;
+  max-width: 1380px; // original 1420
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -506,7 +506,7 @@ a, button {
   }
 
   @include media(mobile) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .column_div {
@@ -529,6 +529,15 @@ a, button {
 
 }
 #svg_menu {
+  transform: translate(8px, 45px) scale(1.17);
+  
+  @include media(laptop) {
+    transform: translate(5px, 45px) scale(1.2);
+  }
+
+  @include media(custom, 1280px) {
+    transform: translate(5px, 46px) scale(1.14);
+  }
 
   .svg_menu_path_selection {
     cursor: pointer;
@@ -543,6 +552,7 @@ a, button {
       opacity: 0.25;
       stroke: #7C7B8A;
       transition: all 0.25s ease-out;
+      pointer-events: none;
   
       @include media(desktop) {
         display: none;
@@ -552,7 +562,7 @@ a, button {
     &:hover {
       .home_img {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1.04);
       }
       path.thread {
         opacity: 1;
@@ -562,20 +572,9 @@ a, button {
   }
 }
 
-// CSS shapes
-.sbmarketplace {
-  clip-path: url(#sbmarketplacepath);
+#sb_now {
+  margin-top: 32px;
 }
-.sbnow {
-  clip-path: url(#sbnowpath);
-}
-.sbnext {
-  clip-path: url(#sbnextpath);
-}
-.sbpro {
-  clip-path: url(#sbpropath);
-}
-
 
 // Community boxes
 .community_div {
@@ -585,8 +584,16 @@ a, button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 360px;
+  max-width: 320px;
   width: 100%;
+  margin: auto;
+  margin-bottom: 26px;
+
+  @include media(custom, 1280px) {
+    max-width: 220px;
+    margin: auto;
+    margin-bottom: 0px;
+  }
 
   p {
     font-family: 'D-DIN-Exp-Bold';
@@ -594,6 +601,7 @@ a, button {
     margin-bottom: 0;
 
     a {
+      font-size: 16px;
       color: #31333B;
       text-decoration: none;
       display: flex;
@@ -601,13 +609,14 @@ a, button {
       justify-content: center;
 
       .arrow_icon {
-        width: 16px;
+        width: 0px;
         opacity: 0;
         transition: all 0.2s ease-in-out;
       }
 
       &:hover .arrow_icon {
         opacity: 1;
+        width: 16px;
         margin-left: 6px;
       }
     }
@@ -623,6 +632,7 @@ a, button {
   }
   .arrow_icon {
     opacity: 1;
+    width: 16px;
     margin-left: 6px;
   }
 }
@@ -644,7 +654,7 @@ a, button {
   margin: 0 auto;
 
   @include media(tablet) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -652,6 +662,70 @@ a, button {
 .graph {
   text-align: center;
   padding-top: 10px;
+  position: relative;
+}
+
+#g2 {
+  position: absolute;
+  border-radius: 150px;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: #F7F8FC solid 20px;
+  width: 140px;
+  height: 140px;
+  z-index: -1;
+
+  @include media(custom, 900px) {
+    width: 132px;
+    height: 132px;
+  }
+  @include media(custom, 800px) {
+    width: 120px;
+    height: 120px;
+  }
+  @include media(custom, 700px) {
+    width: 116px;
+    height: 116px;
+  }
+  @include media(custom, 768px) {
+    width: 118px;
+    height: 118px;
+  }
+  @include media(custom, 668px) {
+    width: 226px;
+    height: 226px;
+  }
+  @include media(custom, 630px) {
+    width: 210px;
+    height: 210px;
+  }
+  @include media(custom, 500px) {
+    width: 210px;
+    height: 210px;
+  }
+  @include media(custom, 540px) {
+    width: 180px;
+    height: 180px;
+  }
+  @include media(custom, 414px) {
+    width: 140px;
+    height: 140px;
+  }
+  @include media(custom, 375px) {
+    width: 128px;
+    height: 128px;
+  }
+  @include media(custom, 320px) {
+    width: 108px;
+    height: 108px;
+  }
+  @include media(custom, 280px) {
+    width: 92px;
+    height: 92px;
+  }
 }
 
 // Legend
@@ -705,7 +779,7 @@ a, button {
   gap: 16px;
 
   @include media(mobile) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 .journey_card {
@@ -749,9 +823,7 @@ a, button {
   background: #E3FEFF;
 }
 
-
-
-
+// Navbar Responsive Breakpoint
 @media (min-width: 1600px){
   .navbar-expand-xl {
       flex-direction: row;

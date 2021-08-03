@@ -57,43 +57,21 @@
         <h6 class="title_h6">Analytics</h6>
         <div class="years_wrpr">
           <span class="year_span">YEAR</span>
+          <form class="slider_box" id="year_slider">
+            <!-- Current value -->
+            <span class="current_year" id="currentvalue">2020</span>
+            <!-- Input range -->
+            <div class="range_div">
+              <!-- Min value -->
+              <span class="min_year" id="min_value">2010</span>
+              <!-- Range bars -->
+              <div class="range_bars" style="--step:1; --min:0; --max:20"></div>
+              <input type='range' min="2010" max="2030" value='2020' step="1" id="year_input"/>
+              <!-- Max value -->
+              <span class="max_year" id="max_value">2030</span>
+            </div>
+        </form>
 
-          <div class="controls" style="--controlHeight: 25em; --scale: 1;">
-            <form class="sliderbox" id="Count" style="--sections: 20; --thumbLength: 0em; --trackSize: -2em;"
-                oninput="x.value=rCount.value,rCount.style.setProperty('--value', (rCount.value-rCount.min)*100/(rCount.max-rCount.min))">
-                <input type='range' min="2010" max="2030" step="1" value='2020' id="rCount" list="Countlabels" />
-                <output id="x" for="rCount" form="Count"></output>
-                <datalist id=Countlabels>
-                  <option>2010</option>
-                  <option>2020</option>
-                  <option>2030</option>
-                </datalist>
-            </form>
-          </div>
-
-          <!-- <ul id="years">
-            <li><span>2010</span></li>
-            <li><span>2011</span></li>
-            <li><span>2012</span></li>
-            <li><span>2013</span></li>
-            <li><span>2014</span></li>
-            <li><span>2015</span></li>
-            <li><span>2016</span></li>
-            <li><span>2017</span></li>
-            <li><span>2018</span></li>
-            <li><span>2019</span></li>
-            <li class="selected"><span>2020</span></li>
-            <li><span>2021</span></li>
-            <li><span>2022</span></li>
-            <li><span>2023</span></li>
-            <li><span>2024</span></li>
-            <li><span>2025</span></li>
-            <li><span>2026</span></li>
-            <li><span>2027</span></li>
-            <li><span>2028</span></li>
-            <li><span>2029</span></li>
-            <li><span>2030</span></li>
-          </ul> -->
         </div>
       </div>
       <div class="clearfix"></div>

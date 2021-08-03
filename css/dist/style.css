@@ -489,7 +489,7 @@ a, button {
 }
 
 .community_wrpr {
-  max-width: 1420px;
+  max-width: 1380px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -503,7 +503,7 @@ a, button {
 }
 @media all and (max-width: 560px) {
   .community_wrpr {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media all and (max-width: 992px) {
@@ -522,6 +522,19 @@ a, button {
   }
 }
 
+#svg_menu {
+  transform: translate(8px, 45px) scale(1.17);
+}
+@media all and (max-width: 1366px) {
+  #svg_menu {
+    transform: translate(5px, 45px) scale(1.2);
+  }
+}
+@media screen and (max-width: 1280px) {
+  #svg_menu {
+    transform: translate(5px, 46px) scale(1.14);
+  }
+}
 #svg_menu .svg_menu_path_selection {
   cursor: pointer;
 }
@@ -534,6 +547,7 @@ a, button {
   opacity: 0.25;
   stroke: #7C7B8A;
   transition: all 0.25s ease-out;
+  pointer-events: none;
 }
 @media all and (max-width: 992px) {
   #svg_menu .svg_menu_path_selection path.thread {
@@ -542,27 +556,15 @@ a, button {
 }
 #svg_menu .svg_menu_path_selection:hover .home_img {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.04);
 }
 #svg_menu .svg_menu_path_selection:hover path.thread {
   opacity: 1;
   stroke: #3121E3;
 }
 
-.sbmarketplace {
-  clip-path: url(#sbmarketplacepath);
-}
-
-.sbnow {
-  clip-path: url(#sbnowpath);
-}
-
-.sbnext {
-  clip-path: url(#sbnextpath);
-}
-
-.sbpro {
-  clip-path: url(#sbpropath);
+#sb_now {
+  margin-top: 32px;
 }
 
 .community_div {
@@ -572,8 +574,17 @@ a, button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 360px;
+  max-width: 320px;
   width: 100%;
+  margin: auto;
+  margin-bottom: 26px;
+}
+@media screen and (max-width: 1280px) {
+  .community_div {
+    max-width: 220px;
+    margin: auto;
+    margin-bottom: 0px;
+  }
 }
 .community_div p {
   font-family: "D-DIN-Exp-Bold";
@@ -581,6 +592,7 @@ a, button {
   margin-bottom: 0;
 }
 .community_div p a {
+  font-size: 16px;
   color: #31333B;
   text-decoration: none;
   display: flex;
@@ -588,12 +600,13 @@ a, button {
   justify-content: center;
 }
 .community_div p a .arrow_icon {
-  width: 16px;
+  width: 0px;
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 .community_div p a:hover .arrow_icon {
   opacity: 1;
+  width: 16px;
   margin-left: 6px;
 }
 
@@ -606,6 +619,7 @@ a, button {
 }
 .community_div.hover .arrow_icon {
   opacity: 1;
+  width: 16px;
   margin-left: 6px;
 }
 
@@ -622,13 +636,100 @@ a, button {
 }
 @media all and (max-width: 767px) {
   .impact_wrpr {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
 .graph {
   text-align: center;
   padding-top: 10px;
+  position: relative;
+}
+
+#g2 {
+  position: absolute;
+  border-radius: 150px;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: #F7F8FC solid 20px;
+  width: 140px;
+  height: 140px;
+  z-index: -1;
+}
+@media screen and (max-width: 900px) {
+  #g2 {
+    width: 132px;
+    height: 132px;
+  }
+}
+@media screen and (max-width: 800px) {
+  #g2 {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 700px) {
+  #g2 {
+    width: 116px;
+    height: 116px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #g2 {
+    width: 118px;
+    height: 118px;
+  }
+}
+@media screen and (max-width: 668px) {
+  #g2 {
+    width: 226px;
+    height: 226px;
+  }
+}
+@media screen and (max-width: 630px) {
+  #g2 {
+    width: 210px;
+    height: 210px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #g2 {
+    width: 210px;
+    height: 210px;
+  }
+}
+@media screen and (max-width: 540px) {
+  #g2 {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 414px) {
+  #g2 {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #g2 {
+    width: 128px;
+    height: 128px;
+  }
+}
+@media screen and (max-width: 320px) {
+  #g2 {
+    width: 108px;
+    height: 108px;
+  }
+}
+@media screen and (max-width: 280px) {
+  #g2 {
+    width: 92px;
+    height: 92px;
+  }
 }
 
 #legend_list {
@@ -677,7 +778,7 @@ a, button {
 }
 @media all and (max-width: 560px) {
   .journey_div {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

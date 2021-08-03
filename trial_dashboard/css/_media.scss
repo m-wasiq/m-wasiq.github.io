@@ -1,0 +1,39 @@
+// Breakpoints
+@mixin media($size, $pixels: null) {
+    @if $size==xlscreen {
+      @media all and (max-width:1600px) {
+        @content;
+      }
+    }
+  
+    @else if $size==laptop {
+      @media all and (max-width:1366px) {
+        @content;
+      }
+    }
+  
+    @else if $size==desktop {
+      @media all and (max-width:992px) {
+        @content;
+      }
+    }
+  
+    @else if $size==tablet {
+      @media all and (max-width:767px) {
+        @content;
+      }
+    }
+  
+    @else if $size==mobile {
+      @media all and (max-width:560px) {
+        @content;
+      }
+    }
+  
+    @else if $size==custom {
+      @media screen and (max-width: $pixels) {
+        @content;
+      }
+    }
+  }
+  

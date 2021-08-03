@@ -1,15 +1,20 @@
-$('#years li').on('click', function(){
-  $('li.selected').removeClass('selected');
-  $(this).addClass('selected');
-});
-
-var rangeSlider = document.getElementById("rs-range-line");
-var rangeBullet = document.getElementById("rs-bullet");
+var rangeSlider = document.getElementById("year_input");
+var rangeValue = document.getElementById("currentvalue");
 
 rangeSlider.addEventListener("input", showSliderValue, false);
 
 function showSliderValue() {
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.bottom = (bulletPosition * 100) + "px";
+  rangeValue.innerHTML = rangeSlider.value;
+  if(rangeSlider.value == 2010) {
+    $('span.min_year').hide();
+  }
+  else if (rangeSlider.value == 2030) {
+    $('span.max_year').hide();
+  }
+  else {
+    $('span.max_year').show();
+    $('span.min_year').show();
+  }
+  var bulletPosition = (rangeSlider.value - rangeSlider.min);
+  rangeValue.style.top = (10*bulletPosition) + "px";
 }
